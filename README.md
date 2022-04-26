@@ -1,5 +1,16 @@
+# Autores
+Camilo Andres Pichimata
+
+Juan Sebastian Cadavid
+
 ### Escuela Colombiana de Ingeniería
 ### Arquitecturas de Software - ARSW
+
+### Link Function App Azure
+``` 
+https://function-lab.azurewebsites.net/api/Fibonacci 
+```
+En caso de que se intente probar tener en cuenta que la funcion que se encuentra desplegada es la que se realizo en el punto 6, por tanto las pruerbas seran limitadas, en nuestro caso el ultimo caso funcionando que fue probado fue el 10000.
 
 ## Escalamiento en Azure con Maquinas Virtuales, Sacale Sets y Service Plans
 
@@ -64,10 +75,32 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
     
 * ¿Por qué es necesario crear un Storage Account de la mano de un Function App?
 
+    La cuenta de almacenamiento proporciona un espacio de nombres único para los datos de Azure Storage que es accesible desde cualquier lugar del mundo mediante HTTP o HTTPS. Los datos de la cuenta de almacenamiento son duraderos y altamente disponibles, seguros y escalables a gran escala.
+
 * ¿Cuáles son los tipos de planes para un Function App?, ¿En qué se diferencias?, mencione ventajas y desventajas de cada uno de ellos.
 
+    Los tipos de planes son Consume, Premium y Dedicado(App Service). Estos se diferencian en que el de Consume escale de forma automática y genera gastos cuando los recursos del proceso solo se esten ejecutando las funciones.
+
+    -   Plan de hospedaje predeterminado.
+    -   Pague solo cuando se ejecutan las funciones.
+    -    Escala de forma automática, incluso durante períodos de carga elevada. 
+    
+    El premium escala automáticamente en función de la demanda mediante trabajos preparados previamente que ejecutan aplicaciones sin ningún retraso después de estar inactivas, ejecuta en instancias más eficaces y se conecta a redes virtuales.
+    - La aplicación de funciones se ejecuta de forma continua, o casi continua.
+    - Tiene un gran número de ejecuciones pequeñas y una factura de ejecución elevada, pero pocos GB por segundo en el plan de consumo.
+    -  Necesita más opciones de CPU o memoria de las que proporciona el plan de consumo.
+    -   Su código debe ejecutarse durante más tiempo del máximo permitido en el plan de consumo.
+    - Necesita características que no están disponibles en el plan de consumo, como la conectividad con red virtual.
+    - Quiere proporcionar una imagen personalizada de Linux en la que ejecutar sus funciones.
+    
+    El Dedicado Ejecute las funciones en un plan de App Service a los Precios de App Service normales. Mejor para escenarios de ejecución prolongada en los que no se puede usar Durable Functions. Considere el plan de App Service en las situaciones siguientes:
+    - Tiene máquinas virtuales infrautilizadas que ya ejecutan otras instancias de App Service.
+    - Se requieren escalado y costos predictivos.
+
 * ¿Por qué la memoization falla o no funciona de forma correcta?
+    
+    Debido a que este cuenta con un límite de llamados para la función recurrente, después de x llamados esta falla, en nuestro caso probamos hasta 10000 antes de que fallara, al realizar la prueba con 100000 este ya fallaba.
 
 * ¿Cómo funciona el sistema de facturación de las Function App?
 
-* Informe
+    Pues de acuerdo al Consumer y premium este depende del uso que se le dé a la función, si esta no se encuentra en uso no pasara nada, ya que no se están usando los recursos, pero en el momento que se empiece a usar de acuerdo a la demanda que se le dé a esta empezara a usar más recursos y así mismo sus costos.
