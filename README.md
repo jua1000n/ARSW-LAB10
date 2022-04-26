@@ -36,17 +36,38 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 
 ![](images/part3/part3-test-function.png)
 
+![](images/4.png)
+
 5. Modifique la coleción de POSTMAN con NEWMAN de tal forma que pueda enviar 10 peticiones concurrentes. Verifique los resultados y presente un informe.
 
+![](images/5.png)
+
 6. Cree una nueva Function que resuleva el problema de Fibonacci pero esta vez utilice un enfoque recursivo con memoization. Pruebe la función varias veces, después no haga nada por al menos 5 minutos. Pruebe la función de nuevo con los valores anteriores. ¿Cuál es el comportamiento?.
+
+![](images/6.1.png)
+
+![](images/6.2.png)
 
 **Preguntas**
 
 * ¿Qué es un Azure Function?
+
+    Azure Functions, es básicamente una solución del tipo FaaS o “función como servicio”, que nos permite ejecutar fácilmente pequeñas piezas de código, o “funciones”, en la nube. El coste que Azure nos repercutirá será el del tiempo de ejecución del código de nuestra función, además si tenemos muchas peticiones a nuestra función, Azure escalará de forma elástica a más instancias o menos en función de la cantidad de peticiones que nuestra función tenga que atender.
+
 * ¿Qué es serverless?
+
+    Serverless computing es un modelo de ejecución de computación en la nube en el que el proveedor de los servicios en la nube destina por demanda recursos de las máquinas virtuales, cuidando de los servidores por sus clientes.
+
 * ¿Qué es el runtime y que implica seleccionarlo al momento de crear el Function App?
+
+    runtime: Se denomina tiempo de ejecución al intervalo de tiempo en el que un programa de computadora se ejecuta en un sistema operativo. 
+    
 * ¿Por qué es necesario crear un Storage Account de la mano de un Function App?
+
 * ¿Cuáles son los tipos de planes para un Function App?, ¿En qué se diferencias?, mencione ventajas y desventajas de cada uno de ellos.
+
 * ¿Por qué la memoization falla o no funciona de forma correcta?
+
 * ¿Cómo funciona el sistema de facturación de las Function App?
+
 * Informe
